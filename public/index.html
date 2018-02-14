@@ -26,56 +26,10 @@
 </head>
 
 <body>
+  <div id="target"></div>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <div class="header">
-    <h1>Lonely Hearts Dating Service</h1>
-  </div>
-  <div class="container text-center">
-    <div id="root">
-      <div id="userPreferences">
-        <h2>Search Criteria</h2>
-        <form class="form">
-          <div class="form-group">
-            <label class="control-label">Age</label>
-            <input type="text" name="ageMin" value="18"> to
-            <input type="text" name="ageMax" value="90">
-          </div>
-
-          <div class="form-group">
-            <label class="control-label">Gender</label>
-            <label class="radio-inline"><input type="radio" name="gender" checked />Any</label>
-            <label class="radio-inline"><input type="radio" name="gender" />Male</label>
-            <label class="radio-inline"><input type="radio" name="gender" />Female</label>
-          </div>
-
-          <button type="button" class="btn btn-default">Reset</button>
-          <button type="submit" class="btn btn-primary">Filter</button>
-        </form>
-      </div>
-
-      <!-- YOUR CODE HERE -->
-      <div id="searchResults">
-        <h2>2 Candidates Found</h2>
-        <ul>
-          <li>
-            <img class="photo" src="https://randomuser.me/api/portraits/women/95.jpg">
-            <span class="name lead">Martha Stewart</span>
-            <span class="age lead">28</span>
-            <button>Contact</button>
-          </li>
-          <li>
-            <img class="photo" src="https://randomuser.me/api/portraits/men/45.jpg">
-            <span class="name lead">Donald J Trump</span>
-            <span class="age lead">70</span>
-            <button>Contact</button>
-          </li>
-        </ul>
-      </div>
-      <!-- END SEARCH RESULTS -->
-    </div>
-  </div>
 </body>
 
 </html>
