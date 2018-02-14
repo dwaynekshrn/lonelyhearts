@@ -20,6 +20,8 @@ These results should be displayed, unfiltered, to the user. The user can then fi
 If you are applying for a role involving a specific framework, please implement your solution for the search results using that framework.
 You are free to refactor the existing filtering controls to use this framework as well, but are not required to do so.
 
+**PS: Please take some time and write some unit tests**. You can use Jest which is preinstalled, triggered by `npm test`, or you can replace with your favorite unit test library.
+
 Further Instructions
 ===================
 A basic package.json file has been provided, which you are free to modify or completely overwrite. If using React, we've provided a more complete version with `package.react.json`. This file will allow you to use `npm install` to scaffold the application and `npm start` to launch the application. If you use your own build pipeline, please include documentation on how your application should be run and/or tested.
