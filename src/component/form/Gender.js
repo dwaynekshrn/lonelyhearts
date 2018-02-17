@@ -1,19 +1,15 @@
 import React from 'react';
 
-export default({ input, type, label, name}) => {
+export default({ input, type, label, name, data}) => {
         return(
-
-            <div>
-            <div className="form-check">
-            <div className="form-check form-check-inline">
-            <input className="form-check-input" type="radio" defaultValue={name} name={name} />
-            <label className="form-check-label" htmlFor={label}>
-           {label}
-            </label>
-            </div>
-
-           </div>
-
-        </div>
+               <div>
+          
+                <label className="form-check-label">
+                  <input {...input} className="form-check-input" type="radio" name={name} id="inlineRadio1" defaultValue={data} /> 
+                {label}
+                  </label>
+          
+  
+              </div>
         )
 }
