@@ -14,7 +14,7 @@ import Contact from './component/Contact';
 class App extends Component{
 constructor(props){
     super(props);
-    this.state = {ageMin: '', ageMax: '', stateGender: "male"}
+    this.state = {ageMin: '', ageMax: '', stateGender: ''}
 }
 
     componentDidMount(){
@@ -38,10 +38,7 @@ constructor(props){
     ageMin = ageMin || 0;
     let ageMax = this.state.ageMax;
     ageMax = ageMax || 100;
-    let stateGender = this.state.stateGender;
-    console.log("ANY ",stateGender)
-
-
+   let stateGender = this.state.stateGender;
     let today = new Date().getFullYear();
     parseInt(today);
     return this.props.dates.map(date => {
@@ -49,7 +46,7 @@ constructor(props){
     const age = today - birthYear;
     const click = () => this.props.getUser(date);
     let suitors = <Dates key={date.cell} picture={date.picture.thumbnail} firstName={date.name.first} lastName={date.name.last} gender={date.gender} dob={age} click={click}/>      
-    if(suitors.props.dob >= ageMin && suitors.props.dob <= ageMax && suitors.props.gender === stateGender){
+    if(suitors.props.dob >= ageMin && suitors.props.dob <= ageMax && ((stateGender) ? suitors.props.gender ===  stateGender: 'no')){
         return suitors;
     }
 
@@ -69,7 +66,7 @@ constructor(props){
         return(
             <div className="row">
               <Header />
-              <Filter onDateSearch={({ageMin, ageMax, gender}) => this.setState({ageMin: ageMin, ageMax: ageMax, stateGender: gender})} />
+              <Filter onDateSearch={({ageMin, ageMax, gender}) => this.setState({ageMin: ageMin, ageMax: ageMax, stateGender: gender})} onReset={() => this.setState({ageMin: '', ageMax: '', stateGender: ''})} />
               {this.renderMatches()}
               </div>
         )
@@ -77,7 +74,6 @@ constructor(props){
 }
 
 function mapStateToProps({dates, user, form}){
-console.log('SOLUTION', form.datesForm)
     return { 
         dates, 
         user,

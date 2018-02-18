@@ -10,6 +10,7 @@ const FIELDS = [
 ];
 
 const FIELDS2 = [
+{type: "radio", label: "Any", name: "gender", values: "any", component:{Gender}},
 {type: "radio", label: "Male", name: "gender", values: "male", component:{Gender}},
 {type: "radio", label: "Female", name: "gender", values: "female", component:{Gender}}
 ]
@@ -44,7 +45,7 @@ render(){
                 {this.renderGender()}
                 </div>
                 <button type="submit"  className="btn btn-danger btn-lg btn-block">Filter</button>
-                <button type="button"  className="btn btn-default btn-lg btn-block">Reset</button>
+                <button type="button" onClick={(this.props.onReset)}  className="btn btn-default btn-lg btn-block">Reset</button>
             </form>       
               </div>
             </div>
